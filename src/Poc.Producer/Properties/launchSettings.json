@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Poc.Producer": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
