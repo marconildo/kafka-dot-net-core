@@ -2,8 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json.Linq;
-using Poc.Core.Kafka.Contracts;
 using Poc.Core.Kafka.DependencyInjection;
+using Poc.Core.Messaging.Handlers;
 using System;
 using System.Threading;
 using System.Threading.Tasks;

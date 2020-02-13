@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Confluent.Kafka;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -18,7 +14,6 @@ namespace Poc.Consumer
 {
     public class Startup
     {
-        public const string PocTopic = "poc-kafka";
         public IConfiguration Configuration { get; }
 
         public Startup(IConfiguration configuration)

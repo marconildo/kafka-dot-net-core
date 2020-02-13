@@ -2,9 +2,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Poc.Core.Kafka.Contracts
+namespace Poc.Core.Messaging.Handlers
 {
-    public interface IJObjectMessageHandler
+    public interface IJObjectMessageHandler : IMessageHandler
     {
         Task Handle(JObject message, CancellationToken token);
     }

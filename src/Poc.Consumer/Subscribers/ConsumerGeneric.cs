@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Poc.Consumer.Subscribers
 {
-    [Topics(Startup.PocTopic)]
+    [Topics("poc-kafka")]
     public class ConsumerGeneric : IMessageHandler<MessageWithAcknowledge<Foo>>
     {
         private readonly IPublisher _publisher;
