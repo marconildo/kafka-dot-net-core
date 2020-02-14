@@ -63,7 +63,8 @@ namespace Poc.Producer
                 };
 
                 //await publisher.PublishAsync("poc-kafka", MessageFactory.Build(typedMessage));
-                await publisher.PublishAsync("poc-kafka", MessageFactory.Build(typedMessage, "poc-acknowledge"));
+                //await publisher.PublishAsync("poc-kafka", MessageFactory.Build(typedMessage, "poc-acknowledge"));
+                await publisher.PublishAsync("poc-kafka", message);
             }
         }
     }
