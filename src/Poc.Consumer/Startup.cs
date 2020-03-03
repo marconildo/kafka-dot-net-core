@@ -8,7 +8,6 @@ using Microsoft.Extensions.Hosting;
 using Poc.Consumer.Subscribers;
 using Poc.Core.Kafka;
 using Poc.Core.Kafka.DependencyInjection;
-using Poc.Core.Kafka.SubscriberHandlers;
 using Poc.Core.Messaging;
 
 namespace Poc.Consumer
@@ -29,18 +28,8 @@ namespace Poc.Consumer
 
             services.AddScoped<IPublisher, KafkaProducer>();
 
-            //var registeredTopics = services.RegisterMessageHandlers(typeof(ConsumerGeneric).Assembly);
-            //services.AddNewHostedSubscriber(registeredTopics);
-
-            services.AddHostedSubscriber();
-
-            // --------------<( string handler)>---------------------------- 
-            services.AddSingleton<ISubscriberHandler, StringSubscriberHandler>();
-            services.AddSingleton(_ =>
-               new SubscriberBinding()
-                   .RegisterTopicHandler<ConsumerBasic>("poc-kafka"));
-            services.AddScoped<ConsumerBasic>();
-            // -----------------------------------------------------------------
+            var registeredTopics = services.RegisterMessageHandlers(typeof(Subscribers.Consumer).Assembly);
+            services.AddNewHostedSubscriber(registeredTopics);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

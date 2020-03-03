@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Poc.Consumer.Subscribers
 {
     [Topics("poc-acknowledge")]
-    public class ConsumerGeneric2 : IMessageHandler<AcknowledgeMessage>
+    public class ConsumerAcknowledge : IMessageHandler<AcknowledgeMessage>
     {
 
         public Task Handle(AcknowledgeMessage message, CancellationToken token)

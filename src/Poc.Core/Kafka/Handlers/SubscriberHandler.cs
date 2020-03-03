@@ -4,21 +4,19 @@ using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Poc.Core.Kafka.DependencyInjection;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Poc.Core.Kafka.SubscriberHandlers
+namespace Poc.Core.Kafka.Handlers
 {
-    public class GenericSubscriberHandler : ISubscriberHandler
+    public class SubscriberHandler : ISubscriberHandler
     {
         private readonly IServiceProvider _serviceProvider;
         private readonly ILogger _logger;
         private readonly SubscriberBinding _binding;
         private readonly ConsumerConfig _config;
 
-        public GenericSubscriberHandler(IServiceProvider serviceProvider,
+        public SubscriberHandler(IServiceProvider serviceProvider,
             ILogger<ISubscriberHandler> logger,
             ConsumerConfig config,
             SubscriberBinding binding)

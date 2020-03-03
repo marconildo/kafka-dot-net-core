@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Poc.Core.Kafka.SubscriberHandlers;
+using Poc.Core.Kafka.Handlers;
 using Poc.Core.Messaging;
 using Poc.Core.Messaging.Handlers;
 using System;
@@ -85,7 +85,7 @@ namespace Poc.Core.Kafka.DependencyInjection
             }
 
             services.AddSingleton(subscriberBinding);
-            services.AddSingleton<ISubscriberHandler, GenericSubscriberHandler>();
+            services.AddSingleton<ISubscriberHandler, SubscriberHandler>();
 
             return registeredTopics;
         }

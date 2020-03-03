@@ -1,7 +1,7 @@
 ﻿using Confluent.Kafka;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Poc.Core.Kafka.SubscriberHandlers;
+using Poc.Core.Kafka.Handlers;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 namespace Poc.Consumer.Subscribers
 {
     [Topics("poc-kafka")]
-    public class ConsumerGeneric : IMessageHandler<MessageWithAcknowledge<Foo>>
+    public class Consumer : IMessageHandler<MessageWithAcknowledge<Foo>>
     {
         private readonly IPublisher _publisher;
-        public ConsumerGeneric(IPublisher publisher)
+        public Consumer(IPublisher publisher)
         {
             _publisher = publisher;
         }
