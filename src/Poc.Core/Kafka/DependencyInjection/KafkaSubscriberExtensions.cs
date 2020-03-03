@@ -25,7 +25,7 @@ namespace Poc.Core.Kafka.DependencyInjection
                 var config = provider.GetRequiredService<ConsumerConfig>();
 
                 if (topics == null)
-                { throw new ArgumentNullException(nameof(topics)); }
+                    throw new ArgumentNullException(nameof(topics));
 
                 return new KafkaSubscriber(
                     provider.GetRequiredService<ILoggerFactory>(),
@@ -47,7 +47,7 @@ namespace Poc.Core.Kafka.DependencyInjection
                 topics = subscriberBinding.RegisteredTopics;
 
                 if (topics == null)
-                { throw new ArgumentNullException(nameof(topics)); }
+                    throw new ArgumentNullException(nameof(topics));
 
                 return new KafkaSubscriber(
                     provider.GetRequiredService<ILoggerFactory>(),

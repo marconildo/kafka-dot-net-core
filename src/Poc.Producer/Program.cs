@@ -50,21 +50,15 @@ namespace Poc.Producer
             {
                 var message = Console.ReadLine();
 
-                //var typedMessage = new MessageWithAcknowledge<Foo>
-                //{
-                //    Body = new Foo { Bar = message },
-                //    AcknowledgeRequested = true,
-                //    AcknowledgeTopic = "poc-acknowledge"
-                //};
-
-                var typedMessage = new Foo
+                var typedMessage = new MessageWithAcknowledge<Foo>
                 {
-                    Bar = message
+                    Body = new Foo { Bar = message },
+                    AcknowledgeRequested = true,
+                    AcknowledgeTopic = "poc-acknowledge"
                 };
 
-                //await publisher.PublishAsync("poc-kafka", MessageFactory.Build(typedMessage));
+                await publisher.PublishAsync("poc-kafka", MessageFactory.Build(typedMessage));
                 //await publisher.PublishAsync("poc-kafka", MessageFactory.Build(typedMessage, "poc-acknowledge"));
-                await publisher.PublishAsync("poc-kafka", message);
             }
         }
     }
